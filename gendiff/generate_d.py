@@ -13,7 +13,7 @@ def generate_diff(file1, file2):
 
     for i in file_path1:
         if i in file_path2 and file_path1.get(i) == file_path2.get(i) and len(file_path2) != 0:
-            result_list.append((i,'',file_path1.get(i)))
+            result_list.append((i,' ',file_path1.get(i)))
             file_path2.pop(i)
         elif i not in file_path2:
             result_list.append((i,'-',file_path1.get(i)))
@@ -29,7 +29,9 @@ def generate_diff(file1, file2):
     for k in sorted(result_list, key=lambda point: (point[0])):
         result_dict.update({k[1] + ' ' + k[0]: k[2]})
 
-    return result_dict
+        #print(result_dict)
+
+    return json.dumps(result_dict, indent=4, sort_keys=False)  # json.dumps(dic, indent=4, sort_keys=True)) result_dict
 
 '''
     result_list = list(result_dict)
@@ -49,7 +51,7 @@ def generate_diff(file1, file2):
 '''
  
 
-print(generate_diff(file1, file2))
+#print(generate_diff(file1, file2))
         
 '''
 
