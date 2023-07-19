@@ -30,5 +30,5 @@ def generate_diff(file1, file2):
     for k in sorted(result_list, key=lambda point: (point[0])):
         result_dict.update({k[1] + ' ' + k[0]: k[2]})
 
-    # json.dumps(dic, indent=4, sort_keys=True)) result_dict
+    # return result_dict
     return json.dumps(result_dict, indent=4, sort_keys=False)
