@@ -32,13 +32,13 @@ def generate_diff(file1, file2):
         result_dict.update({k[1] + ' ' + k[0]: k[2]})
 
     for d in result_dict:
-        result_str += '    ' + str(d) + ':' + ' ' + str(result_dict.get(d)) + '\n'
+        e = result_dict.get(d)
+        result_str += '    ' + str(d) + ':' + ' ' + str(e) + '\n'
 
     result_str = '{' + '\n' + result_str + '}'
 
     return result_str
     # return result_dict
     # return json.dumps(result_dict, indent=4, sort_keys=False)
-    
-print(generate_diff(file1, file2))
 
+# print(generate_diff(file1, file2))
