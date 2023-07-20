@@ -1,4 +1,5 @@
-from gendiff.generate_diff import generate_diff
+#!/usr/bin/env python
+from generate_diff import generate_diff
 
 
 def test_generate_diff():
