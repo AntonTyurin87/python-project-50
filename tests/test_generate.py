@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import pytest
 from gendiff.generate_diff import generate_diff
 
