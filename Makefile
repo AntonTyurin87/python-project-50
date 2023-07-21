@@ -20,6 +20,9 @@ test-coverage:
 lint:
 	poetry run flake8 gendiff/
 
+test-cov:
+	poetry run pytest --cov=gendiff --cov-report xml
+
 selfcheck:
 	poetry check
 
@@ -30,3 +33,6 @@ package-install:
 	python3 -m pip install --user dist/*.whl
 
 .PHONY: install test lint selfcheck check build
+
+test-cov:
+	poetry run pytest --cov=gendiff --cov-report xml
