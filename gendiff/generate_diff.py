@@ -6,6 +6,11 @@ file2 = 'tests/fixtures/file2.json'
 
 
 def generate_diff(file1, file2):
+    if file1[len(file1)-5:len(file1)] != '.json':
+        return 'ancorrect file'
+    elif file2[len(file2)-5:len(file2)] != '.json':
+        return 'ancorrect file'
+
     result_dict = {}
     result_list = []
     result_str = ''
