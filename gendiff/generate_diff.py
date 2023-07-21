@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import json
 
-file1 = 'tests/fixtures/file1.json'
+file1 = 'tests/fixtures/file1.json' 
 file2 = 'tests/fixtures/file2.json'
 
 
@@ -41,4 +41,4 @@ def generate_diff(file1, file2):
     # return result_dict
     # return json.dumps(result_dict, indent=4, sort_keys=False)
 
-# print(generate_diff(file1, file2))
+print(generate_diff(file1, file2))
