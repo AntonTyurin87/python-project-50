@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+# Здесь будет скрипт с вызовом argparse
+
 import argparse
 from gendiff.generate_diff import generate_diff
 
