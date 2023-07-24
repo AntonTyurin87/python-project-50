@@ -1,16 +1,23 @@
 #!/usr/bin/env python3
 
-def make_dict_diff(result_list):
-    result_dict = {}
-    result_str = ''
 
-    for k in sorted(result_list, key=lambda point: (point[0])):
-        result_dict.update({k[1] + ' ' + k[0]: k[2]})
+def make_dict_diff(file_path1, file_path2):
 
-    for d in result_dict:
-        e = result_dict.get(d)
-        result_str += '    ' + str(d) + ':' + ' ' + str(e) + '\n'
+    result_list = []
 
-    result_str = '{' + '\n' + result_str + '}'
+    for i in file_path1:
+        if i in file_path2 and file_path1.get(i) == file_path2.get(i):
+            result_list.append((i, ' ', file_path1.get(i)))
+            file_path2.pop(i)
+        elif i not in file_path2:
+            result_list.append((i, '-', file_path1.get(i)))
+        elif i in file_path2 and file_path1.get(i) != file_path2.get(i):
+            result_list.append((i, '-', file_path1.get(i)))
+            result_list.append((i, '+', file_path2.get(i)))
+            file_path2.pop(i)
 
-    return result_str
+    if len(file_path2) != 0:
+        for j in file_path2:
+            result_list.append((j, '+', file_path2.get(j)))
+
+    return result_list
