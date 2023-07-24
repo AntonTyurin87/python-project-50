@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-
 def make_dict_diff(file_path1, file_path2):
 
     result_list = []
@@ -21,3 +20,5 @@ def make_dict_diff(file_path1, file_path2):
             result_list.append((j, '+', file_path2.get(j)))
 
     return result_list
+
+# print(make_dict_diff(file_path1, file_path2))
