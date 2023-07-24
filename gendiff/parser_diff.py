@@ -1,7 +1,8 @@
+#!/usr/bin/env python3
 import json
 import yaml
 
-# ile = 'tests/fixtures/file1.json'
+# file = 'tests/fixtures/file1.json'
 # file = 'tests/fixtures/file1.yaml'
 # file = 'tests/fixtures/file1.yml'
 
