@@ -1,22 +1,18 @@
 #!/usr/bin/env python3
-import json
+from gendiff.parser_diff import parser_diff
 
-file1 = 'tests/fixtures/file1.json'
-file2 = 'tests/fixtures/file2.json'
+# file1 = 'tests/fixtures/file1.json'
+# file2 = 'tests/fixtures/file2.json'
 
 
 def generate_diff(file1, file2):
-    if file1[len(file1) - 5:len(file1)] != '.json':
-        return 'ancorrect file'
-    elif file2[len(file2) - 5:len(file2)] != '.json':
-        return 'ancorrect file'
 
     result_dict = {}
     result_list = []
     result_str = ''
 
-    file_path1 = json.load(open(file1))
-    file_path2 = json.load(open(file2))
+    file_path1 = parser_diff(file1)
+    file_path2 = parser_diff(file2)
 
     for i in file_path1:
         if i in file_path2 and file_path1.get(i) == file_path2.get(i):
