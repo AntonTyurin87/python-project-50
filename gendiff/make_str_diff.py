@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-def make_dict_diff(result_list):
+def make_str_diff(result_list):
     result_dict = {}
     result_str = ''
 
