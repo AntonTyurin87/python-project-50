@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-from parser_diff import parser_diff
-from make_str_diff import make_str_diff
-from make_dict_diff import make_dict_diff
+from gendiff.parser_diff import parser_diff
+from gendiff.make_str_diff import make_str_diff
+from gendiff.make_dict_diff import make_dict_diff
 
 # file1 = 'tests/fixtures/file1.json'
 # file2 = 'tests/fixtures/file2.json'
