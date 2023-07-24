@@ -3,8 +3,8 @@ from parser_diff import parser_diff
 from make_str_diff import make_str_diff
 from make_dict_diff import make_dict_diff
 
-file1 = 'tests/fixtures/file1.json'
-file2 = 'tests/fixtures/file2.json'
+# file1 = 'tests/fixtures/file1.json'
+# file2 = 'tests/fixtures/file2.json'
 
 
 def generate_diff(file1, file2):
@@ -21,4 +21,4 @@ def generate_diff(file1, file2):
     # return result_dict
     # return json.dumps(result_dict, indent=4, sort_keys=False)
 
-print(generate_diff(file1, file2))
+# print(generate_diff(file1, file2))

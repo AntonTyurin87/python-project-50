@@ -39,4 +39,3 @@ def test_format():
     assert file2_yaml[len(file2_yaml)-5:len(file2_yaml)] == '.yaml'
     assert file1_yml[len(file1_yml)-4:len(file1_yml)] == '.yml'
     assert file2_yml[len(file2_yml)-4:len(file2_yml)] == '.yml'
-
