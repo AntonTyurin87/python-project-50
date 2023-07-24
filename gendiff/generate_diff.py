@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 from gendiff.parser_diff import parser_diff
+from gendiff.make_dict_diff import make_dict_diff
 
 # file1 = 'tests/fixtures/file1.json'
 # file2 = 'tests/fixtures/file2.json'
@@ -7,9 +8,7 @@ from gendiff.parser_diff import parser_diff
 
 def generate_diff(file1, file2):
 
-    result_dict = {}
     result_list = []
-    result_str = ''
 
     file_path1 = parser_diff(file1)
     file_path2 = parser_diff(file2)
@@ -29,16 +28,8 @@ def generate_diff(file1, file2):
         for j in file_path2:
             result_list.append((j, '+', file_path2.get(j)))
 
-    for k in sorted(result_list, key=lambda point: (point[0])):
-        result_dict.update({k[1] + ' ' + k[0]: k[2]})
+    return make_dict_diff(result_list)
 
-    for d in result_dict:
-        e = result_dict.get(d)
-        result_str += '    ' + str(d) + ':' + ' ' + str(e) + '\n'
-
-    result_str = '{' + '\n' + result_str + '}'
-
-    return result_str
     # return result_dict
     # return json.dumps(result_dict, indent=4, sort_keys=False)
 
