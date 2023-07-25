@@ -15,6 +15,7 @@ def generate_diff(file1, file2):
     file_path2 = parser_diff(file2)
 
     result_list = make_dict_diff(file_path1, file_path2)
+    # print(result_list)
 
     return make_str_diff(result_list)
 
