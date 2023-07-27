@@ -1,3 +1,6 @@
-from gendiff.generate_diff import generate_diff
+from gendiff.diff_main import generate_diff
 
-__all__ = ('generate_diff',)  # noqa: WPS410
+
+__version__ = '1.0'
+
+__all__ = (generate_diff, __version__)

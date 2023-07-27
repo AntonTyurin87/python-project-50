@@ -1,22 +1,34 @@
 import argparse
+import pathlib
 
-from gendiff.formaters.formaters import FORMATERS
-from gendiff.generate_diff import DEFAULT_FORMAT
+import gendiff
+from gendiff.format import FORMAT_CHOICES
 
 
-def get_args():
+def get_arguments():
+    """ In CLI when utility 'gendiff' is called,
+    the function returns a tuple (file1, file2, formatter) """
     parser = argparse.ArgumentParser(
         prog='gendiff',
-        description='Generate diff',
-    )
-    parser.add_argument('first_file', help='path to first file')
-    parser.add_argument('second_file', help='path to second file')
-    parser.add_argument(
-        '-f',
-        '--format',
-        help='set format of output (default: {0})'.format(DEFAULT_FORMAT),
-        choices=FORMATERS,
-        default=DEFAULT_FORMAT,
-    )
+        description='Compares two configuration files and shows a difference.',
+        usage='%(prog)s [options] <filepath1> <filepath2>')
+    parser.add_argument('first_file',
+                        type=pathlib.Path,
+                        help=argparse.SUPPRESS)
+    parser.add_argument('second_file',
+                        type=pathlib.Path,
+                        help=argparse.SUPPRESS)
+    parser.add_argument('-V',
+                        '--version',
+                        dest='version',
+                        help='output the version number',
+                        action='version',
+                        version=f'%(prog)s {gendiff.__version__}')
+    parser.add_argument('-f',
+                        '--format',
+                        help='output format (default: "%(default)s")',
+                        choices=FORMAT_CHOICES.keys(),
+                        metavar='',
+                        default='stylish')
     args = parser.parse_args()
     return args.first_file, args.second_file, args.format
