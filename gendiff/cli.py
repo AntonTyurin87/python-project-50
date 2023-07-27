@@ -1,12 +1,22 @@
 import argparse
 
+from gendiff.formaters.formaters import FORMATERS
+from gendiff.generate_diff import DEFAULT_FORMAT
 
-def parse_args():
-    desctipt = 'Compares two configuration files and shows a difference.'
-    parser = argparse.ArgumentParser(description=desctipt)
-    parser.add_argument('first_file')
-    parser.add_argument("second_file")
-    f_help = 'set format of output'
-    parser.add_argument('-f', '--format', dest='format',
-                        help=f_help, default="STYLISH")
-    return parser.parse_args()
+
+def get_args():
+    parser = argparse.ArgumentParser(
+        prog='gendiff',
+        description='Generate diff',
+    )
+    parser.add_argument('first_file', help='path to first file')
+    parser.add_argument('second_file', help='path to second file')
+    parser.add_argument(
+        '-f',
+        '--format',
+        help='set format of output (default: {0})'.format(DEFAULT_FORMAT),
+        choices=FORMATERS,
+        default=DEFAULT_FORMAT,
+    )
+    args = parser.parse_args()
+    return args.first_file, args.second_file, args.format
