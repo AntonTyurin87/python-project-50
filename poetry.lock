@@ -33,7 +33,7 @@ test = ["pytest (>=6)"]
 
 [[package]]
 name = "flake8"
-version = "5.0.1"
+version = "5.0.4"
 description = "the modular source code checker: pep8 pyflakes and co"
 category = "main"
 optional = false
@@ -149,7 +149,7 @@ python-versions = ">=3.7"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "83cf5dad041fef5414320ebb199dd5653700ca553d9642c5d0aff960534dde93"
+content-hash = "9ab4a016fc89be19f21c2c9a5003c9a95f4ac3fed8a13003a8705e192e7d93ae"
 
 [metadata.files]
 colorama = []
